@@ -1,7 +1,7 @@
-/*
-3 sum
-given a list of intergers find 3 that add to n
-*/
+
+//3 sum
+//given a list of intergers find 3 that add to n
+
 
 import std;
 
