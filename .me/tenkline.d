@@ -1,3 +1,9 @@
+
+// given a file with 10k lines of data, return a summery of that data
+//
+// each line will have a comma seperated lable(string) and a float
+// for each lable return a min, mean and max 
+
 import std.stdio;
 import std.random;
 import std.math;

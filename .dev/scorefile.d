@@ -138,7 +138,7 @@ int score(string file){
 	scr=0;
 	auto f=File(file).byLineCopy;
 	//import basic is free
-	if(f.front=="import basic.d;"){
+	if(f.front=="import basic;"){
 		f.popFront;
 	} else {
 		"warning: you should start files with `import basic;`".writeln;

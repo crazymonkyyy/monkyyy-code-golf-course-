@@ -1,6 +1,7 @@
-/*
-given a css color name return the hexcode
-*/
+import basic;
+//
+//given a css color name return the hexcode
+//https://code.golf/css-colors
 string[string] data=[
 "IndianRed":"#cd5c5c",
 "LightCoral":"#f08080",
@@ -151,7 +152,6 @@ string[string] data=[
 "DarkSlateGrey":"#2f4f4f",
 "Black":"#000000",
 ];
-import std;
 void main(string[] s){
 	data[s[1]].writeln;
 }

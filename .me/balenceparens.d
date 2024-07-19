@@ -1,4 +1,8 @@
-import std;
+import basic;
+//
+// given a string, return if the ()'s balence
+// handle (),[],{}
+//
 char[char] parns=[')':'(',']':'[','}':'{'];
 bool balparns(string s){
 	string store;
