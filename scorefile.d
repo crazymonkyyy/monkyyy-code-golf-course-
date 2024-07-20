@@ -175,7 +175,7 @@ int score(string file){
 	.each!(a=>scr++);
 	return scr;
 }
-/* 
-void main(string[] s){
+
+/* void main(string[] s){
 	score(s[1]).writeln;
-} */
+} hate this behavoir bleh*/
