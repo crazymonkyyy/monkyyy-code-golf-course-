@@ -2,6 +2,9 @@ import basic;
 //
 //given a css color name return the hexcode
 //https://code.golf/css-colors
+//
+// HINT: generate some code using .dev/csscolors.txt
+
 string[string] data=[
 "IndianRed":"#cd5c5c",
 "LightCoral":"#f08080",

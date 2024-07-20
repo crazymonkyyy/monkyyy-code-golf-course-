@@ -14,3 +14,10 @@ int[] fact(int i){
 	}
 	return o;
 }
+unittest{
+	fact(10).writeln;
+	fact(480).writeln;
+}
+void main(string[] s){
+	s[1].to!int.fact.writeln;
+}

@@ -20,11 +20,13 @@ string barfoo(tuple!(int,string) a){
 	return a[1];
 }
 void main(){
-	counter(100).map!(a=>
-		foobar(pair(a,""),2,"foo")
-		.foobar(3,"fizz")
-		.foobar(5,"buzz")
-		.foobar(7,"bar")
-		.barfoo)
-	.each!writeln;
+	foreach(e;
+			counter(100).map!(a=>
+			foobar(pair(a,""),2,"foo")
+			.foobar(3,"fizz")
+			.foobar(5,"buzz")
+			.foobar(7,"bar")
+			.barfoo)){
+		e.writeln;
+	}
 }

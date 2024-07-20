@@ -4,7 +4,7 @@ import basic;
 //return a list of coins that sums to that total
 //
 
-int[] coins1(int total,int[] coins){
+int[] coinchange(int total,int[] coins){
 	int[] o;
 	while(total>0 && coins.length>0){
 		if(total>=coins[0]){
@@ -15,4 +15,14 @@ int[] coins1(int total,int[] coins){
 		}
 	}
 	return o;
+}
+
+unittest{
+	coinchange(64,[25,10,5,1]).writeln;
+	coinchange(15,[999,1]).length.writeln;
+}
+void main(string[] s){
+	int total=s[1].to!int;
+	int[] coins=s[2..$].to!(int[]);
+	coinchange(total,coins).writeln;
 }

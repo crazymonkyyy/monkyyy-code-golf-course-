@@ -25,3 +25,36 @@ struct counter{
 	void popFront(){front++;}
 	bool empty()=>front<=end;
 }
+unittest{
+	//todo
+}
+//less bad autodecoding, still bad tho
+auto front(E)(E[] range)=>range[0];
+void popFront(E)(ref E[] range){range=range[1..$];}
+bool empty(E)(E[] range)=>range.length==0;
+unittest{
+	//todo
+}
+auto map(alias F,R)(R r){
+	struct Map{
+		R r;
+		auto front()=>F(r.front);
+		void popFront(){r.popFront;}
+		bool empty()=>r.empty;
+	}
+	return Map(r);
+}
+unittest{
+	//todo
+}
+//todo filter
+//todo reduce
+auto array(R)(R r){
+	typeof(R.front())[] output;
+	foreach(e;r){
+		output~=e;
+	}
+	return output;
+}
+
+

@@ -29,4 +29,8 @@ bool balparns(string s){
 }
 unittest{
 	balparns("()[]{}([{}])").writeln;
+	balparns("()[]{}([{})").writeln;
+}
+void main(string[] s){
+	balparns(s[1]).writeln;
 }
