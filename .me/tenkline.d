@@ -28,8 +28,8 @@ void main(string[] s){
 	}
 	foreach(k,d;data){
 		write(k,":");
-		d[].reduce!min.write(",");
-		d[].mean.write(",");
-		d[].reduce!max.writeln;
+		d.reduce!min.write(",");
+		d.reduce!mean[0].write(",");
+		d.reduce!max.writeln;
 	}
 }

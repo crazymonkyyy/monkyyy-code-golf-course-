@@ -23,7 +23,7 @@ struct counter{
 	int end;
 	int front=0;
 	void popFront(){front++;}
-	bool empty()=>front<=end;
+	bool empty()=>front>end;
 }
 unittest{
 	//todo
@@ -48,7 +48,24 @@ unittest{
 	//todo
 }
 //todo filter
-//todo reduce
+auto reduce(alias F,R)(R r){
+	alias E=typeof(F(r.front,r.front));
+	if(r.empty){return E.init;}	
+	auto t=r.front;
+	r.popFront;
+	if(r.empty){return E.init;}
+	E e=F(t,r.front);
+	r.popFront;
+	while(!r.empty){
+		e=F(e,r.front);
+		r.popFront;
+	}
+	return e;
+}
+unittest{
+	counter(4).reduce!((a,b)=>a+b).writeln;
+}
+	
 auto array(R)(R r){
 	typeof(R.front())[] output;
 	foreach(e;r){
@@ -58,3 +75,16 @@ auto array(R)(R r){
 }
 
 
+//line of user given code
+
+auto max(I)(I a,I b)=>a>b?a:b;
+auto min(I)(I a,I b)=>a>b?b:a;
+auto countUntil(R,E)(R r,E e){
+	foreach(i,e_;r){
+		if(e_==e){return i;}
+	}
+	return -1;
+}
+
+auto mean(I)(I a,I b)=>pair((a+b)/2,2);
+auto mean(I)(tuple!(I,int) acc,I e)=>pair((acc[0]*acc[1]+e)/(acc[1]+1),acc[1]+1);
