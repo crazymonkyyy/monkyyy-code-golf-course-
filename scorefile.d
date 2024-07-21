@@ -1,3 +1,4 @@
+#!rdmd -version=localmain 
 import std;
 auto takeUntil(R)(R base,R other){
 	struct Result{
@@ -175,7 +176,7 @@ int score(string file){
 	.each!(a=>scr++);
 	return scr;
 }
-
-/* void main(string[] s){
+version(localmain){
+void main(string[] s){
 	score(s[1]).writeln;
-} hate this behavoir bleh*/
+}}

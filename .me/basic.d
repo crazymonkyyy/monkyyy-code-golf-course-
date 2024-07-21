@@ -7,3 +7,5 @@ public import std.stdio;
 public import std.conv;
 public import std.algorithm:sort;
 //DEV: should I force the user to write a sort algorthim?
+public import std.random;
+public import std.math;
