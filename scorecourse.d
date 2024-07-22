@@ -35,5 +35,15 @@ void main(string[] s){
 		"coinchange.d",50,
 		"tenkline.d",25,
 	);
-	writeln(total,"/",partotal);
+	"----".writeln;
+	{//mylib is scored at a 1000x discount
+		int filesscore=score(folder~'/'~"mylib.d");
+		filesscore*=9;//TODO: change to 18 later
+		filesscore/=1000;
+		total+=filesscore;
+		partotal+=1000;
+		writeln("mylib.d(/1000)",":",filesscore,"(par:",1000,")");
+	}
+
+	writeln("your total:",total,"/par:",partotal);
 }
